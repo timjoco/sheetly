@@ -7,7 +7,6 @@ async function createTable() {
         id SERIAL PRIMARY KEY,
         title TEXT,
         uploader TEXT,
-        file_path TEXT
       );
     `);
     console.log('Table "pdfs" created.');
