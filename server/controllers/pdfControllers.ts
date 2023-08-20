@@ -1,4 +1,4 @@
-import db from '../configs/DBConfig';
+import db from '../configs/DBConfig.ts';
 
 interface PdfController {
   uploadPdf: (

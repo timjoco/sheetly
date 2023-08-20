@@ -32,9 +32,10 @@ app
           return res.status(400).json({ error: 'No file uploaded.' });
         }
         // Save file information to the database
-        // const { title, uploader, path } = req.body;
+        const { title, uploader, path } = req.body;
         // const pdfId = await pdfController.uploadPdf(title, uploader, path);
 
+        console.log(req.body);
         return res.status(200).json({ message: 'File uploaded successfully.' });
       }
     );

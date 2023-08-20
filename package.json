@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "nodemon --exec ts-node --transpile-only server/server.ts",
+    "dev": "nodemon --exec ts-node --transpile-only server/server.ts --loader ts-node/esm",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

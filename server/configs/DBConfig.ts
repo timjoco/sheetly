@@ -5,8 +5,8 @@ const db = pgp({
   host: 'localhost',
   port: 5432,
   database: 'yourdatabase',
-  user: 'drummer',
-  password: 'drummer',
+  user: 'sheetly',
+  password: 'sheetly',
 });
 
 export default db;
