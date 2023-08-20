@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 import multer from 'multer';
 import next from 'next';
+import pdfController from './controllers/pdfControllers';
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
@@ -33,10 +34,11 @@ app
         }
         // Save file information to the database
         const { title, uploader, path } = req.body;
-        // const pdfId = await pdfController.uploadPdf(title, uploader, path);
+        const pdfId = await pdfController.uploadPdf(title, uploader, path);
 
-        console.log(req.body);
-        return res.status(200).json({ message: 'File uploaded successfully.' });
+        return res
+          .status(200)
+          .json({ message: 'File uploaded successfully.', pdfId });
       }
     );
 

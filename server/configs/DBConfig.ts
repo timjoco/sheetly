@@ -4,7 +4,7 @@ const pgp = pgPromise();
 const db = pgp({
   host: 'localhost',
   port: 5432,
-  database: 'yourdatabase',
+  database: 'sheetly',
   user: 'sheetly',
   password: 'sheetly',
 });
