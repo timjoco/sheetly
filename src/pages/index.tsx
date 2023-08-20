@@ -18,7 +18,18 @@ export default function Home() {
         <div className={styles.description}>
           <p>Upload a file to the server:</p>
           <form action="/upload" method="POST" encType="multipart/form-data">
-            <input type="file" name="file" />
+            <div>
+              <label htmlFor="title">Title:</label>
+              <input type="text" id="title" name="title" />
+            </div>
+            <div>
+              <label htmlFor="uploader">Uploader:</label>
+              <input type="text" id="uploader" name="uploader" />
+            </div>
+            <div>
+              <label htmlFor="file">File:</label>
+              <input type="file" id="file" name="file" />
+            </div>
             <br />
             <br />
             <input type="submit" value="Upload" />

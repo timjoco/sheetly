@@ -14,10 +14,12 @@
     "incremental": true,
     "allowImportingTsExtensions": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@/server/*": ["./server/*"]
     },
     "allowJs": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "baseUrl": "./",
   },
   "ts-node": {
     "esm": true
