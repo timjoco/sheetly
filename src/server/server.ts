@@ -8,7 +8,7 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 
 const server = express();
-server.use(express.json()); // Parse JSON bodies
+server.use(express.json());
 
 app
   .prepare()

@@ -15,22 +15,20 @@
     "allowImportingTsExtensions": true,
     "paths": {
       "@/*": ["./src/*"],
-      "@/server/*": ["./server/*"]
+      "@server/*": ["./src/server/*"]
     },
     "allowJs": true,
     "skipLibCheck": true,
-    "baseUrl": "./",
+    "baseUrl": "./"
   },
   "ts-node": {
     "esm": true
   },
   "include": [
     "next-env.d.ts",
-    "server/server.ts",
+    "src/server/**/*.ts",
     "**/*.ts",
-    "**/*.tsx",
-    "server/configs/DBConfig.ts",
-    "server/controllers/pdfControllers.ts"
+    "**/*.tsx"
   ],
   "exclude": ["node_modules"]
 }
