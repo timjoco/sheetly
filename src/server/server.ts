@@ -13,9 +13,6 @@ server.use(express.json());
 app
   .prepare()
   .then(() => {
-    const server = express();
-
-    // Set up storage for uploaded files
     const storage = multer.diskStorage({
       destination: (req, file, cb) => {
         cb(null, 'uploads/'); // Specify the upload directory
@@ -27,7 +24,6 @@ app
 
     const upload = multer({ storage });
 
-    // Handle file uploads
     server.post(
       '/upload',
       upload.single('file'),
@@ -37,11 +33,15 @@ app
         }
         // Save file information to the database
         const { title, uploader } = req.body;
-        const pdfId = await pdfController.uploadPdf(title, uploader);
-
-        return res
-          .status(200)
-          .json({ message: 'File uploaded successfully.', pdfId });
+        try {
+          const pdfId = await pdfController.uploadPdf(title, uploader);
+          return res
+            .status(200)
+            .json({ message: 'File uploaded successfully.', pdfId });
+        } catch (error) {
+          console.error('Error uploading PDF:', error);
+          return res.status(500).json({ error: 'Internal server error.' });
+        }
       }
     );
 
