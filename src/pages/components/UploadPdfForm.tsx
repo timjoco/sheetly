@@ -1,4 +1,4 @@
-import { Box, Button, Input } from '@mui/material';
+import { Box, Input } from '@mui/material';
 import { createClient } from '@supabase/supabase-js';
 import { ChangeEvent } from 'react';
 import env from '../../../env-config.js';
@@ -30,7 +30,7 @@ const UploadPdfForm = () => {
   return (
     <Box>
       <Input type="file" inputProps={{ accept: '.pdf'}} />
-      <Button variant="contained" color="primary" onClick={handleUpload}>Upload</Button>
+      {/* <Button variant="contained" color="primary" onClick={handleUpload}>Upload</Button> */}
     </Box>
   );
 };
