@@ -34,6 +34,7 @@ export default function Home() {
             <br />
             <input type="submit" value="Upload" />
           </form>
+          {/* <UploadPdfForm /> */}
         </div>
       </main>
     </>
